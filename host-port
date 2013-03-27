@@ -6,6 +6,13 @@ require "mapping.rb"
 
 # Configure options.
 opts = Trollop::options do
+  banner <<-EOS
+Determine which port a given test host is running on.
+
+Usage:
+  host-port [options]
+where [options] are:
+EOS
   opt :host, "Host name for which to print the port", :type => :string
 end
 
