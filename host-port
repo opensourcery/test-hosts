@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require "rubygems"
+require "trollop"
+require "mapping.rb"
+
+# Configure options.
+opts = Trollop::options do
+  opt :host, "Host name for which to print the port", :type => :string
+end
+
+Trollop::die :host, "is mandatory" if opts::host.nil?
+Trollop::die :host, "no such value #{opts::host}" if Mapping[opts::host].nil?
+
+print Mapping[opts::host]
+  
