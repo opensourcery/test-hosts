@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+  ServerAdmin webmaster@localhost
+  ServerName <%= host %>.opensourcery.com
+  ServerAlias gargravarr
+  <Proxy *>
+    Order deny,allow
+    Allow from all
+  </Proxy>
+  ProxyPreserveHost on
+  ProxyPass / http://localhost:<%= port %>/
+</VirtualHost>
