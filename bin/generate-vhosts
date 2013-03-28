@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
 
+$:.push File.expand_path(File.dirname(__FILE__) + '/../lib')
+
 require "erb"
 require "rubygems"
 require "trollop"
 require "mapping.rb"
 
 # Template file
-filename = "templates/virtualhost.erb"
+filename = File.expand_path(File.dirname(__FILE__) + '/../lib/templates/virtualhost.erb')
 
 # Configure options.
 opts = Trollop::options do
