@@ -44,4 +44,9 @@ class apache2 () {
     command => "/usr/sbin/a2enmod vhost_alias rewrite expires headers",
     require => Package["apache2"],
   }
+
+  # ensure directories are in place
+  file { [ '/var/www/dev7' ]:
+    ensure => 'directory',
+  }
 }
