@@ -23,4 +23,7 @@ exec { "install-drush":
 }
 
 # vhosts
-class { 'apache2': }
+class { 'apache2':
+  root_domain => 'dev.opensourcery.com',
+  apache_port => 7000
+}

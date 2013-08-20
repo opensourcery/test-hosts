@@ -1,7 +1,7 @@
-<VirtualHost *:80>
+<VirtualHost *:<%= apache_port %>>
     ServerAdmin webmaster@localhost
-    ServerName  dev.opensourcery.com
-    ServerAlias *.dev.opensourcery.com
+    ServerName  <%= root_domain %>
+    ServerAlias *.<%= root_domain %>
     UseCanonicalName Off
 
     VirtualDocumentRoot /var/www/dev7/%1/current/

@@ -1,4 +1,7 @@
-class apache2 () {
+class apache2 (
+  $apache_port = '80',
+  $root_domain = 'dev.opensourcery.com'
+  ) {
 
   package { "apache2": }
   package { "apache2.2-common": }
