@@ -48,6 +48,12 @@ class apache2 (
     require => Package["apache2"],
   }
 
+  exec { 'apache sites':
+    notify => Service['apache2'],
+    command => '/usr/sbin/a2ensite dev7',
+    require => File['/etc/apache2/sites-available/dev7'],
+  }
+
   # ensure directories are in place
   file { [ '/var/www/dev7' ]:
     ensure => 'directory',
