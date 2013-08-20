@@ -11,6 +11,12 @@ class apache2 () {
     require => Package["apache2"],
   }
 
+  service { "dnsmasq":
+    ensure => "running",
+    enable => "true",
+    require => Package['dnsmasq'],
+  }
+
   # Drupal 6
   # TODO
 
