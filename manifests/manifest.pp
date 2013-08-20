@@ -21,3 +21,6 @@ exec { "install-drush":
     command => "/usr/bin/pear channel-discover pear.drush.org; /usr/bin/pear upgrade-all; /usr/bin/pear install drush/drush; /usr/bin/drush -h",
     require => Package["php-pear"],
 }
+
+# vhosts
+class { 'apache2': }
