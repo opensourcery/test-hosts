@@ -1,8 +1,9 @@
 package { 'php5': }
-package { "php5-cli": }
-package { "php-apc": }
-package { "php5-mysql": }
-package { "php5-gd": }
+package { 'php5-cli': }
+package { 'php-apc': }
+package { 'php5-mysql': }
+package { 'php5-gd': }
+package { 'php5-curl': }
 package { "php-pear": }
 package { "mysql-server": }
 # Required for drush make
